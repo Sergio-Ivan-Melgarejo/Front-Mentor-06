@@ -30,8 +30,8 @@ Users should be able to:
 
 ## It's mine
 
-![](./design/1.jpg)
-![](./design/2.jpg)
+![](./design/1.jpeg)
+![](./design/2.jpeg)
 
 ### Links
 
