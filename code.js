@@ -45,36 +45,35 @@ function activate(e){
 
 const days = async ()=>{
     let data = await dataJson();
-    for(let element in hours1){
-        hours1[element].textContent = data[element].timeframes["daily"].current + "hrs";
-
-        hours2[element].innerHTML = "Last Day - " + data[element].timeframes["daily"].previous + "hrs"
+    for(let i = 0; i < 6; i++){
+        hours1[i].textContent = data[i].timeframes["daily"].current + "hrs";
+        hours2[i].innerHTML = "Last Day - " + data[i].timeframes["daily"].previous + "hrs"
     }
 }
 
 const weeks = async ()=>{
-    let data = await dataJson();
-    for(let element in hours1){
-        hours1[element].textContent = data[element].timeframes["weekly"].current + "hrs";
-
-        hours2[element].innerHTML = "Last Week - " + data[element].timeframes["weekly"].previous + "hrs"
+    let data = await dataJson();    
+    for(let i = 0; i < 6; i++){
+        hours1[i].textContent = data[i].timeframes["weekly"].current + "hrs";
+        hours2[i].innerHTML = "Last Week - " + data[i].timeframes["weekly"].previous + "hrs"
     }
 }
 
 const months = async ()=>{
     let data = await dataJson();
-    for(let element in hours1){
-        hours1[element].textContent = data[element].timeframes["monthly"].current + "hrs";
-
-        hours2[element].innerHTML = "Last Month - " + data[element].timeframes["monthly"].previous + "hrs"
+    for(let i = 0; i < 6; i++){
+        let time = data[i]["timeframes"]["monthly"]["current"];
+        hours1[i].textContent = time + "hrs";
+        time = data[i].timeframes.monthly.previous;
+        hours2[i].innerHTML = "Last Month - " + time + "hrs";
     }
 }
 
 //JSON
 const dataJson = async ()=>{
     let dataFetch = await fetch("data.json");
-    let dataJson = await dataFetch.json();
-    return dataJson;
+    let dataJson = await dataFetch.text();
+    return JSON.parse(dataJson);
 }
 
 //event

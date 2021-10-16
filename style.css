@@ -114,6 +114,7 @@ body{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     transition: background-color 350ms;
+    overflow: hidden;
 }
 .box-flex:hover{
     cursor: pointer;
@@ -171,6 +172,35 @@ body{
     background-position: 95% -1em; 
 }
 
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    opacity: .4;
+    transition: opacity 350ms;
+}
+
+.attribution:hover {
+    opacity: 0.9;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+    transition: color 350ms;
+}
+
+.attribution a:hover{
+    color: var(--color-0);
+}
+
+/*js__________*/
+.active{
+    background-color: var(--Desaturatedblue);
+}
+.active-2{
+    color: var(--color-0);
+}
+/*___________*/
+
 @media screen and (min-width: 651px) and (max-width: 1200px) {
     body{
         font-size: 22px;
@@ -213,7 +243,11 @@ body{
         flex-direction: column;
     }
     .flex__hour-1{
-        font-size: 4em;
+        font-size: 3em;
+    }
+    .flex__hour-2{
+        position: relative;
+        top: -20px;
     }
     .box-flex{
         flex-direction: column;
@@ -224,32 +258,4 @@ body{
     .header-text{
         width: fit-content;
     }
-}
-
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
-    opacity: .4;
-    transition: opacity 350ms;
-}
-
-.attribution:hover {
-    opacity: 0.9;
-}
-
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
-    transition: color 350ms;
-}
-
-.attribution a:hover{
-    color: var(--color-0);
-}
-
-/*js__________*/
-.active{
-    background-color: var(--Desaturatedblue);
-}
-.active-2{
-    color: var(--color-0);
 }
